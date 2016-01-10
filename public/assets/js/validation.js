@@ -98,7 +98,7 @@ $(document).ready(function()
 var app=angular.module("myApp",[]);
 app.controller("personCtrl",function($scope)
 {
-	var admin = {username:'ex:mathan',password:'password'}
+	var admin = {username:'mathan',password:'password'}
     $scope.admin = admin;
       
 });
