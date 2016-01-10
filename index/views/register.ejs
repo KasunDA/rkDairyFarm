@@ -1,0 +1,140 @@
+<!-- <html>
+<head>
+	<title>register</title>
+</head>
+<body>
+<h3>register</h3>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RK Dairy Farm</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="/libs/css/bootstrap.min.css">
+  <link href="/assets/css/register.css" rel="stylesheet">
+  <script src="libs/js/jquery.min.js"></script>
+  <script src="libs/js/bootstrap.min.js"></script>
+  <script src="libs/js/angular.min.js"></script>
+ <script type="text/javascript" src="assets/js/validation.js"></script> 
+</head>
+<body ng-app="myApp" ng-controller="personCtrl" >
+    <div class="container-fluid" style="background-color:#660000;color:#fff;">
+        <div class="row">
+            <div class="col-sm-1">
+                <a href="/"><img src=../libs/image/logo.jpg alert="searchLogo" id="image" /></a>
+            </div>
+            <div class="col-sm-8">
+                <h3 class="navbar-brand">R K Dairy Farm</h3>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="77" style="z-index:2;border:0px;margin:0px">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" > <span class="glyphicon glyphicon-home"> Home</span> </a></li>
+                    <li><a href="/milk">Quantity of Milk</a></li>
+                    <li><a href="/cowProfile">Profile</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/register">Sign up</a></li>
+                    <li><a data-toggle="modal" href="#myModal" data-backdrop="static" ><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-radius:6px 6px 0px 0px;padding:15px 50px;">
+                <h4><span class="glyphicon glyphicon-lock"></span> Register</h4>
+            </div>
+            <div class="modal-body" style="padding:0px 20px 20px 20px;">
+                <form role="form" name="myForm" action="/register" method="post">
+                    <div class="form-group">
+                        <label for="fullname">Full name:</label>
+                        <input type="text" class="form-control" name="fullname" id="fullname" ng-model="register.fullname" placeholder="Enter full name"  required> 
+                        <p class="incorrectfullname"></p>
+                    </div>
+                    <div class="form-group" >
+                    <label for="username"></span>User name:</label>
+                        <input type="text" class="form-control" name="username" id="username" ng-model="register.username" placeholder="Enter user name"  required> 
+                        <p class="incorrectusername"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" name="password" ng-model="register.password" id="password" placeholder="Enter password" required>
+                        <p class="incorrectpassword"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="repeatpassword">Confirm Password:</label>
+                        <input type="password" class="form-control" name="repeatpassword" ng-model="register.repeatpassword" 
+                        id="repeatpassword" placeholder="repeat the password" required>
+                        <p class="incorrectrepeatpassword"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailid"></span>Email id:</label>
+                        <input type="text" class="form-control" name="emailid" ng-model="register.emailid" id="emailid" placeholder="Enter email id" required>
+                        <p  class="incorrectemailid"></p>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneno"></span>Phone No:</label>
+                        <input type="text" class="form-control" maxlength="10" name="phoneno" ng-model="register.phoneno" id="phoneno" placeholder="Enter phone number" required>
+                        <p class="incorrectphoneno"></p>
+                    </div>
+                    <button type="submit" ng-disabled="register.all"  class="btn btn-success btn-block"><span  class="glyphicon glyphicon-registration-mark"></span> Register </button>
+                </form> 
+                <div class="modal-footer">
+                    <p><a data-toggle="modal" href="#myModal" data-backdrop="static" >Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="border-radius:6px 6px 0px 0px;padding:15px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4><span class="glyphicon glyphicon-lock"></span> Admin Login</h4>
+                </div>    
+                <div class="modal-body" style="padding:0px 20px 20px 20px;">
+                    <form role="form" name="myForm" action="/login" method="post" autocomplete="off" novalidate>
+                        <div class="form-group" >
+                            <label for="username"><span class="glyphicon glyphicon-user"></span>User name:</label>
+                            <input type="text" class="form-control" name="username" id="username" ng-model="admin.username" placeholder="Enter user name" required>
+                            <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+                            <span ng-show="myForm.username.$error.required">Username is required.
+                            </span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><span class="glyphicon glyphicon-eye-open"></span>Password:</label>
+                            <input type="password" class="form-control" name="password" ng-model="admin.password" id="password" placeholder="Enter password" required>
+                            <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+                            <span ng-show="myForm.password.$error.required">Password is required.</span></span>
+                        </div> 
+                            <button  type="submit" class="btn btn-success btn-block"  ng-disabled="myForm.username.$dirty && myForm.username.$invalid ||  
+                            myForm.password.$dirty && myForm.password.$invalid"><span class="glyphicon glyphicon-off"></span> login</button>
+                    </form> 
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <p><a href="/register">Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

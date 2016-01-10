@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RK Dairy Farm</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="/libs/css/bootstrap.min.css">
+  <link href="/assets/css/litre.css" rel="stylesheet">
+  <link href="/assets/css/home.css" rel="stylesheet">
+  <script src="libs/js/jquery.min.js"></script>
+  <script src="libs/js/bootstrap.min.js"></script>
+  <script src="libs/js/angular.min.js"></script>
+  <script type="text/javascript" src="assets/js/cowProfile.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="listCtrl">
+    <div class="container-fluid"style="background-color:#660000;color:#fff;" >
+        <div class="row">
+            <div class="col-sm-1">
+                <a href="/logout"><img src=../libs/image/logo.jpg alert="searchLogo" id="image" /></a>
+            </div>
+            <div class="col-sm-8">
+                <h3 class="navbar-brand">R K Dairy Farm</h3>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="77" style="z-index:2;border:0px;margin:0px">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/logout" > <span class="glyphicon glyphicon-home"> Home</span> </a></li>
+                <li><a href="/milk">Quantity of Milk</a></li>
+                <li class="active"><a href="/cowProfile" >Profile</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/logout" ><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="table-responsive">          
+            <table class="table">
+                <div>
+                    <h4>Information About Cattle</h4>
+                    <p id = "err"></p>
+                </div>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>age</th>
+                        <th>Injected Date</th>
+                        <th>Expected date for calf</th>
+                        <th>No of Calves</th>
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input id = "name" class="form-control" ng-model="contact.name"></td>
+                        <td><input class="form-control" ng-model="contact.age"></td>
+                        <td><input class="form-control" type="text" ng-model="contact.inj"></td>
+                        <td><input class="form-control" type="text" ng-model="contact.expected"></td>
+                        <td><input class="form-control" type="text" ng-model="contact.calves"></td>
+                        <td><button class="btn btn-primary" ng-click="save()">Save</button></td>  
+                    </tr>
+                    <tr ng-repeat= "contact in list">
+                        <td>{{contact.name}}</td>
+                        <td>{{contact.age}}</td>
+                        <td>{{contact.inj}}</td>
+                        <td>{{contact.expected}}</td>
+                        <td>{{contact.calves}}</td>
+                        <td><button class="btn btn-danger" id = "btn" ng-click="delete(contact._id)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

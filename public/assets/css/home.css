@@ -1,0 +1,151 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v4/qx1LSqts-NtiKcLw4N03IO87R-l0-Xx_7cYc0ZX1ifE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v4/qx1LSqts-NtiKcLw4N03IEd0sm1ffa_JvZxsF_BEwQk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Serif'), local('DroidSerif'), url(https://fonts.gstatic.com/s/droidserif/v6/0AKsP294HTD-nvJgucYTaI4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Droid Serif Italic'), local('DroidSerif-Italic'), url(https://fonts.gstatic.com/s/droidserif/v6/cj2hUnSRBhwmSPr9kS5898u2Q0OS-KeTAWjgkS85mDg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.modal-header,h4, .close 
+   {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 20px;
+   }
+#err
+   {
+      text-align: center;
+      color:red;
+   }
+.modal-footer 
+  {
+      background-color: #f9f9f9;
+  }
+#incorrect
+  {
+    text-align:center;
+    color:red;
+    margin-top:5px;
+  }
+.affix 
+  {
+      top: 0;
+      width: 100%;
+      background-color: #660000;
+     
+
+  }
+.affix a 
+  {
+      color: #fff !important;
+      padding: 15px !important;
+     
+  }
+.affix-top a 
+  {
+      padding: 15px !important;
+  }
+#image
+  {
+
+      margin: 5px;
+      width:25px;
+      height:25px;
+  }
+.navbar-brand
+  {
+    padding:0px;
+    font-size:15px;
+    color:#fec503;
+    font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+  }
+.col-sm-8,.col-sm-1
+  {
+    padding:0px;
+  }
+ header .intro-text 
+   {
+    padding-top: 80px;
+    padding-bottom: 50px;
+   }
+header
+    { 
+    background-image: url(/libs/image/background.jpg);
+    background-position:center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: #000;
+    font-style: bold;
+    }
+@media(min-width:768px) {
+  
+    #image
+      {
+        margin:10px 0px 10px 40px;
+        width:60px;
+        height:60px;
+      }
+    .navbar-brand
+      {
+        padding:0px;
+        font-size:30px;
+        color:#fec503;
+        font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+      }
+    header .intro-text
+    {
+        padding-top: 150px;
+        padding-bottom: 400px;
+    }
+
+    header .intro-text .intro-lead-in 
+    {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        color: #000;
+        z-index:1;
+
+    }
+
+    header .intro-text .intro-heading 
+    {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+}
